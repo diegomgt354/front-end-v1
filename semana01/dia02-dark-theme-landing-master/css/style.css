@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* font-family: "Open Sans", sans-serif;
+font-family: "Raleway", sans-serif; */
+
+/* variables o custom properties */
+:root{
+    /* fonts */
+    --font-primary : "Raleway", sans-serif; 
+    --font-secundary : "Open Sans", sans-serif;
+    --font-size : 14px;
+    --font-weight-regular : 400;
+    --font-weight-bold : 700;
+
+
+    /* colors */
+    --color-primary-dark-blue-intro : hsl(217, 28%, 15%);
+    --color-primary-dark-blue-main : hsl(218, 28%, 13%);
+    --color-primary-dark-blue-footer : hsl(216, 53%, 9%);
+    --color-primary-dark-blue-testimonials : hsl(219, 30%, 18%);
+
+    --color-accent-cyan-gradient : hsl(176, 68%, 64%);
+    --color-accent-blue-gradient : hsl(198, 60%, 50%);
+    --color-accent-error-gradient : hsl(0, 100%, 63%);
+
+    --color-neutral-white : hsl(0, 0%, 100%);
+
+}
+
+
+/* general */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+html{
+    font-size: var(--font-size);
+    font-family: var(--font-primary);
+}
+
+body{
+    background-color: var(--color-primary-dark-blue-intro);
+    color: var(--color-neutral-white);
+}
+
+a{
+    color: inherit; /* heredado */
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%; /* ancho */
+    height: auto; /* alto */
+}
+
+
+/* utils */
+.wrapper {
+    /* width: 1440px; */
+    /* width: min(100%, 1440px); */
+    width: min(100% - 3rem, 1440px);
+}
+
+.wrapper-720 {
+    /* width: 1440px; */
+    /* width: min(100%, 1440px); */
+    width: min(100% - 3rem, 720px);
+}
+
+
+/* header section */
+.header{
+
+    font-family: var(--font-primary);
+    display: flex;
+    justify-content: space-between; /* elementos hijos en los extremos */
+    align-items: center; /* centrar los elementos hijos */
+    /* width: 500px; */
+    margin: 0 auto; /* 1-3 arriba  2-4 abajo*/
+    margin-top: 4rem;
+     /* 1rem = tama;o de la letra raiz, en este caso 14px */
+     /* 1em = tamalio de a letra contenedor mas proximo */
+}
+
+.header__nav{
+    display: flex;
+    gap: 2rem; /* separacion entre elementos hijos */
+}
+
+
+/* hero section */
+
+.hero{
+    font-family: var(--font-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    text-align: center;
+
+    padding-top: 3rem;
+    padding-bottom: 10rem;
+
+    background: url(../images/bg-curvy-desktop.svg) no-repeat bottom;
+    background-size: contain;
+}
+
+.hero__title{
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+.hero__content{
+    font-family: var(--font-secundary);
+    line-height: 1.5;
+
+    padding: 0 7rem;
+}
+
+.hero__button{
+    border: none;
+    color: var(--color-neutral-white);
+    background: linear-gradient(90deg, var(--color-accent-cyan-gradient) 0%, var(--color-accent-blue-gradient) 100%);
+    padding: 1.2rem 5.5rem;
+    border-radius: 2rem;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    /* transition: all ease .2s; */
+}
+
+.hero__button:hover{
+    background: var(--color-accent-blue-gradient);
+}
+
+
+/* features section */
+
+.features{
+    background-color: var(--color-primary-dark-blue-main);
+    display: grid;
+    grid-template-columns: 340px 340px;
+    justify-content: center;
+    gap: 5rem;
+
+}
+
+.feature{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature__img{
+    height: 7rem;
+}
+
+.feature__title{
+    font-family: var(--font-primary);
+}
+
+.feature__content{
+    font-family: var(--font-secundary);
+}
+
+
+/* collaboration section */
+
+.collaboration{
+    background-color: var(--color-primary-dark-blue-main);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    justify-content: center; 
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+
+    
+
+}
+
+.collaboration__img{
+    /* height: 50%; */
+}
+
+.collaboration__information{
+    /* height: 50%; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
+}
+
+.information__title{
+    font-size: 3rem;
+}
+
+.information__link{
+    align-items: center;
+}
+
+.information__icon {
+    background-image: url(../images/icon-arrow.svg);
+}
+
+
+
+
+
+
+
+
+
+
+
+.hidden{
+    display: none;
+}
