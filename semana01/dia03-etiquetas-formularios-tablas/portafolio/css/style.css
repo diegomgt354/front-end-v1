@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* VARIABLES */
+
+:root {
+  /* Fonts */
+  --font-primary: "Poppins", sans-serif;
+  --font-size: 16px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Colors */
+  --primary-color-gold: #FFB742;
+  --primary-color-blue1: #393646;
+  --primary-color-blue2: #4F4557;
+  --primary-color-blue3: #6D5D6E;
+  --primary-color-white: #FFFFFF;
+}
+
+/* GENERAL */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  font-family: var(--font-primary);
+
+  background-color: var(--primary-color-blue2);
+  color: var(--primary-color-white)
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* UTILS */
+
+.wrapper {
+  /* border: 1px solid red; */
+  width: min(100% - 3rem, 1220px);
+
+  margin: 0 auto;
+}
+
+/* HEADER SECTION */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  color: var(--primary-color-gold);
+  font-size: 2rem;
+  /* 1rem = 16px -> 2rem = 32px */
+  font-weight: var(--font-weight-bold);
+}
+
+.header__menu {
+  display: flex;
+  gap: 1.5rem;
+
+  padding: .5rem;
+  margin: 2rem;
+}
+
+.header__menu a {
+  font-size: 1.125rem;
+  /* 1.125rem * 16px = 18px */
+  font-weight: var(--font-weight-semibold);
+  text-transform: capitalize;
+}
+
+.header__menu--active,
+.header__menu a:hover {
+  color: var(--primary-color-gold);
+  border-bottom: 2px solid var(--primary-color-gold);
+}
+
+.header__links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header__links--active {
+  background-color: var(--primary-color-blue1);
+  padding: .3rem;
+  border-radius: 100%;
+}
+
+/* HERO SECTION */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem;
+}
+
+.hero--bg {
+  background-image: url(../images/bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.hero__gretting {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: capitalize;
+}
+
+.hero span {
+  color: var(--primary-color-gold);
+  text-decoration-line: underline;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: capitalize;
+}
+
+.hero__description {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-regular);
+}
+
+.hero__photo {
+  border-radius: 100%;
+}
+
+.stack {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stack__title {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.stack__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 6rem;
+  height: 6rem;
+
+  background-color: var(--primary-color-blue2);
+  border-radius: 0.5rem;
+}
+
+/* SKILLS SECTION */
+
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 10rem 4rem;
+}
+
+@media(min-width: 992px){
+    .skills{
+        flex-direction: row;
+    }
+}
+
+
+.skill__title{
+    font-size: 1rem;
+    padding: 0.1rem 0.7rem;
+    border-radius: 1rem;
+    color: var(--primary-color-gold);
+    background-color: var(--primary-color-blue3);
+    width: max-content; /* para que el texto no se salga del contenedor */
+}
+
+.skill__sub-title{
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+}
+
+@media(min-width: 992px){
+    .skill__sub-title{
+        text-align: left;
+    }
+}
+.skill__description{
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 1rem;
+}
+
+@media(min-width: 992px){
+    .skill__description{
+        text-align: left;
+        max-width: 330px;
+    }
+}
+
+.skill__platform{
+    font-size: 0.7rem;
+    color: var(--primary-color-gold);
+    font-weight: var(--font-weight-bold);
+}
+
+.skill__imgs{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill__img{
+    display:flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* PROFILE SECTION */
+
+.profile__title{
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-color-gold);
+    background-color: var( --primary-color-blue3);
+    width: max-content;
+    padding: 0.1rem 0.7rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+}
+
+.profile__sub-title{
+    text-align: center;
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 2rem;
+}
+
+.profile__categories{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.profile__category--active{
+    font-size: 0.7rem;
+    color: var(--primary-color-gold);
+    border-bottom: 2px solid var(--primary-color-gold);
+}
+
+
+.profile__category{
+    font-size: 0.7rem;
+    border-bottom: 2px solid var(--primary-color-white);
+}
+
+.profile__category:hover{
+    color: var(--primary-color-gold);
+    border-bottom: 2px solid var(--primary-color-gold);
+}
+
+.profile__category--active{
+    font-size: 0.7rem;
+    color: var(--primary-color-gold);
+    border-bottom: 2px solid var(--primary-color-gold);
+}
+
+
+.img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--primary-color-blue1);
+}
+
+.profile_imgs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.profile__img{
+    width: 280px;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.profile__img:hover{
+    border: 5px solid;
+    border-color: var(--primary-color-gold);
+}
+
+
+/* FOOTER SECTION */
+
+.footer--bg{
+    background-image: url(../images/bg.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    }
+    
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+    padding: 15rem 0;
+}
