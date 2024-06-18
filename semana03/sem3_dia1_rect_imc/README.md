@@ -8,8 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-https://vitejs.dev/guide/
+https://tailwindcss.com/docs/guides/vite
 
-npm create vite@latest
-npm install
-npm run dev
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p // crea los archivos postcss.config.js y tailwind.config.js

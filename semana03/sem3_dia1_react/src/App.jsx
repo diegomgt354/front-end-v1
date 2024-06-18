@@ -32,4 +32,83 @@ function App() {
   )
 }
 
+// function
+export function NewApp() {
+  return <h1>Hola mundo!</h1>
+}
+
+// arrow function
+export const NewApp2 = () => <h1>Hola mundo 2!</h1>
+
+// multiples lineas en un fragmento
+export const NewApp3 = () => {
+  return (
+    <>
+      <h1>Hola mundo 3!</h1>
+      <p>Esto es un parrafo</p>
+    </>
+  )
+}
+
+// rfce y rfc (react functional component example)
+
+
+// metodos de renderizado
+const Saludo = () => {
+  return <h4>Buenas noches!</h4>
+}
+
+const Despedida = () => {
+  return <h4>Ya me voy a dormir!</h4>
+}
+
+// consumo de metdodos de renderizado
+export const NewApp4 = () => {
+  return (
+    <>
+      {/* {Saludo()} */}
+      {/* {Despedida()} */}
+      <Saludo />
+      <Despedida />
+
+    </>
+  )
+}
+
+
+import { Mensaje } from './components/Mensaje.jsx'
+import { Consejo } from './components/Consejo.jsx'
+
+export const NewApp5 = () => {
+
+  return (
+    <>
+      <Mensaje />
+      <Consejo />
+      {/* esto es un comentario */}
+
+    </>
+  )
+}
+
+import { FRUTAS, COLORES } from './components/Colores.js'
+
+export const NewApp6 = () => {
+
+  return (
+    <>
+      {FRUTAS.map((fruta) => (
+        <li key={fruta}>{fruta}</li>
+      ))}
+      {COLORES.map((color) => (
+        <li style={{ color: color, fontSize: "40px"  }}>{color}</li>
+      ))}
+
+    </>
+  )
+}
+
+
+
+
 export default App

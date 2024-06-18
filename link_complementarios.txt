@@ -27,5 +27,6 @@ https://developer.mozilla.org/es/docs/Web/Events
 
 https://github.com/nvm-sh/nvm?tab=readme-ov-file
 https://vitejs.dev/
+https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
 
 
