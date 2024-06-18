@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#7796a9]">
+    <main class="w-[200px] bg-[#282D35] my-0 mx-auto mt-5 p-5 rounded-md shadow-md shadow-orange-400">
+        <h1 class="text-1xl font-bold text-center text-orange-400 mb-2">Masa Corporal (IMC)</h1>
+
+        <section class="flex flex-col gap-3">
+            <label for="altura" class="text-slate-300">Altura: </label>
+            <input type="text" id="altura" class="w-full mb-3 p-1 rounded-md font-bold text-right" value="0" />
+            <label for="peso" class="text-slate-300">Peso: </label>
+            <input type="peso" id="peso" class="w-full mb-3 p-1 rounded-md font-bold text-right" value="0" />
+
+            <button class="button bg-red-400 p-2 rounded-md hover:bg-red-500 duration-300">Calcular</button>
+
+            <p id="imc" class="text-slate-300 text-right h-5"></p>
+
+        </section>
+    </main>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

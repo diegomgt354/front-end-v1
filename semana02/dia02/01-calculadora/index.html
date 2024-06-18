@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#7796a9]">
+    <main class="w-[400px] bg-[#282D35] my-0 mx-auto mt-5 p-5 rounded-md shadow-md shadow-orange-400">
+        <h1 class="text-5xl font-bold text-center text-orange-400 mb-2">Calculadora</h1>
+
+        <section class="flex flex-col gap-3">
+            <p id="historial" class="text-slate-300 text-right h-5">0</p>
+            <!-- <input  id="historial" class="text-slate-300 text-right">dfdf</input> -->
+            <input type="text" id="input" class="w-full mb-3 p-1 rounded-md text-4xl font-bold text-right" value="0" />
+
+            <div class="grid grid-cols-3 gap-3">
+                <button class="button bg-red-400 p-2 rounded-md hover:bg-red-500 duration-300">+</button>
+                <button class="button bg-red-400 p-2 rounded-md hover:bg-red-500 duration-300">-</button>
+                <button class="button bg-red-400 p-2 rounded-md hover:bg-red-500 duration-300">*</button>
+                
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">7</button>
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">8</button>
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">9</button>
+
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">4</button>
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">5</button>
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">6</button>
+                
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">1</button>
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">2</button>
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">3</button>
+
+                <button class="button bg-blue-400 p-2 rounded-md hover:bg-blue-500 duration-300">0</button>
+                <button class="button bg-green-400 p-2 rounded-md hover:bg-green-500 duration-300">AC</button>
+                <button class="button bg-green-400 p-2 rounded-md hover:bg-green-500 duration-300">=</button>
+
+            </div>
+        </section>
+    </main>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
