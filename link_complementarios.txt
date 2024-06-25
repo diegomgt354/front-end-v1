@@ -30,3 +30,5 @@ https://vitejs.dev/
 https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
 
 
+https://www.netlify.com/
+https://app.netlify.com/drop
