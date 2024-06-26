@@ -10,6 +10,7 @@ const AppointmentInputForm = (props) => {
             name={name}
             placeholder={placeholder}
             className='border p-3 shadow-md rounded-md w-full'
+            required
             value={value}
             onChange={handleChangeAppointment}
         />

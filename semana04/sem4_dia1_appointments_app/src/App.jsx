@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AppointmentsForm from './components/appointments/AppointmentsForm';
 import AppointmentsList from './components/appointments/AppointmentsList';
 import AppointmentsHeader from './components/appointments/AppointmentsHeader';
-
+import AppointmentListJson from './components/appointments/AppointmentListJson';
 
 const App = () => {
 
@@ -32,6 +32,7 @@ const App = () => {
     setAppointments(newAppointments);
   }
 
+  // TODO: Crear/Editar una nueva cita
   const handleSaveAppointment = (appointment, isNew) => {
     if(isNew){
       // crear una nueva cita
@@ -46,6 +47,9 @@ const App = () => {
       setAppointments(newAppointments);
     }
     
+    // limpiamos el formulario con los datos jalados
+    setCurrentAppointment([]); 
+    
   }
 
   // TOOD: Eliminar la cita
@@ -58,30 +62,43 @@ const App = () => {
 
   }
 
-  // TODO: Editar la cita
+  // TODO: Jalar la cita que se va a editar
   const handleEditAppointment = (appointment) => {
     setCurrentAppointment(appointment);
+    console.log('edicion del paciente', appointment);
   }
 
   return (
     <>
       <AppointmentsHeader title='Citas Medicas para Mascotas'/>
       
-      <main className='container m-auto flex gap-12 py-5'>
+      <main className='container m-auto flex flex-wrap gap-12 py-5'>
 
-        <AppointmentsForm
-          onSaveAppointment={handleSaveAppointment}
-          appointment = {currentAppointment}
-        />
+        {/* <div> */}
 
-        {/* <pre>{JSON.stringify(appointments, null, 2)}</pre> */}
+          <AppointmentsForm
+            onSaveAppointment={handleSaveAppointment}
+            appointment = {currentAppointment}
+          />
 
-        <AppointmentsList
-        appointments = {appointments}
-        onConfirmAppointment = {handleConfirmAppointment}
-        onRemoveAppointment = {handleRemoveAppointment}
-        onEditAppointment = {handleEditAppointment}
-        />
+        {/* </div> */}
+
+        {/* <div className='flex gap-12 border border-cyan-500 rounded-md p-3'> */}
+  
+          <AppointmentsList
+            appointments = {appointments}
+            onConfirmAppointment = {handleConfirmAppointment}
+            onRemoveAppointment = {handleRemoveAppointment}
+            onEditAppointment = {handleEditAppointment}
+          />
+
+          <AppointmentListJson 
+            appTitle = 'JSON Citas'
+            appointments = {appointments} 
+          />
+
+        {/* </div> */}
+
       </main>
     </>
   )

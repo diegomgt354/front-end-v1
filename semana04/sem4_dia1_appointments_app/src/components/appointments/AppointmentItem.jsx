@@ -3,6 +3,7 @@ import React from 'react'
 const AppointmentItem = ({ appointment, onConfirmAppointment, onRemoveAppointment, onEditAppointment }) => {
     return (
         <div className='flex flex-col gap-3 mb-4'>
+
             <article className='border-2 p-4 border-sky-300 rounded-lg bg-sky-200'>
                 <div>
                     <h4 className="font-semibold text-2xl">Mascota</h4>

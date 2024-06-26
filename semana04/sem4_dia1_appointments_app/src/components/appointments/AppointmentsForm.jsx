@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import AppointmentInputForm from './AppointmentInputForm';
 import AppointmentTextAreaForm from './AppointmentTextAreaForm';
+import AppointmentListJson from './AppointmentListJson';
 
 const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
 
     const INITIAL_FORM_STATE = {
+        id: '',
         petName: '',
         petAge: '',
         ownerName: '',
@@ -18,9 +20,9 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
 
     // nos ayuda a controlar el ciclo de vida
     useEffect(() => {
+        console.log('appointment', appointment);
         if(appointment.id) {
             setForm(appointment);
-            // appointment.id = null;
         }
     }, [appointment]);
 // }, [appointment,setForm]);
@@ -28,21 +30,27 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
     // manejo de evento para el envio del formulario
     const handleSubmit = (event) => {
         event.preventDefault(); // para que no se actualize la pagina
+        console.log('appointment al inicio', appointment);
         if(appointment.id){
             // logica para editar una cita
+            console.log('editar');
             onSaveAppointment(form, false);
         } else {
             // logica para crear una nueva cita
+            console.log('guardar');
             const newAppointment = {
                 ...form,
                 id: crypto.randomUUID(),
             };
 
             onSaveAppointment(newAppointment, true);
+            
         }
-
+        
         setForm(INITIAL_FORM_STATE);
-        appointment.id = null;
+        // appointment.id = null;
+
+        console.log('appointment al final', appointment);
     }
 
     // manejo de los campos en el formulario
@@ -53,9 +61,13 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
 
     return (
         <section className='w-96 p-4 border rounded-md'>
-            <h2 className='text-4x1 text-center mb-4'>Nuevo paciente</h2>
 
-            <form className='w-full flex flex-col gap-5' onSubmit={handleSubmit}>
+
+
+            <h2 className='text-4xl text-center mb-4'>
+                {appointment.id ? ('Editar paciente') : ('Nuevo paciente')}</h2>
+
+            <form className='w-full flex flex-col gap-5 mb-3' onSubmit={handleSubmit}>
 
                     <AppointmentInputForm
                         type='text'
@@ -66,7 +78,7 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
                     />
                     
                     <AppointmentInputForm
-                        type='text'
+                        type='number'
                         name='petAge'
                         placeholder='Edad de la mascota'
                         value={form.petAge}
@@ -107,13 +119,12 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
                     <input type="submit" value="Guardar cita" 
                     className='p-3 bg-green-600 text-white rounded-md cursor-pointer hover:bg-green-700 duration-300'/>
 
-
             </form>
 
-            <h1 className="text-2xl text-center mt-10">JSON</h1>
-            <div className='text-left w-full bg-blue-100 border my-3 p-3 border-blue-500 rounded-md'>
-                <pre className="w-full overflow-auto whitespace-pre-wrap">{JSON.stringify(form, null, 2)}</pre>
-            </div>
+            <AppointmentListJson 
+                appTitle = 'JSON Formulario'
+                appointments = {form} 
+            />
         
         </section>
     )
