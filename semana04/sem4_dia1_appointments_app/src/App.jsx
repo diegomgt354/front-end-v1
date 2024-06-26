@@ -7,28 +7,42 @@ import AppointmentsHeader from './components/appointments/AppointmentsHeader';
 const App = () => {
 
   const INITIAL_APPOINTMENT = {
-    id: 1,
+    id: 'id_inicial',
     petName: 'Rabiosa',
     petAge: '3',
     ownerName: 'Diego',
-    appointmentDate: '',
-    appointmentTime: '',
+    appointmentDate: '2024-06-19',
+    appointmentTime: '19:52',
     sysmptoms: 'Duerme mucho',
+    confirmed: false
   }
 
   const [appointments, setAppointments] = useState([INITIAL_APPOINTMENT]);
   const [currentAppointment, setCurrentAppointment] = useState([]);
 
+
+  const handleConfirmAppointment = (appointment) => {
+    const {id} = appointment;
+
+    const appointmentFoundIndex = appointments.findIndex((a) => a.id == id);
+    const newAppointments = [...appointments]
+
+    newAppointments[appointmentFoundIndex].confirmed = appointment.confirmed ? false : true;
+
+    setAppointments(newAppointments);
+  }
+
   const handleSaveAppointment = (appointment, isNew) => {
     if(isNew){
+      // crear una nueva cita
       setAppointments([...appointments, appointment]);
     }else{
       // actualizar la cita
       const {id} = appointment;
-      const appointmentFoundIndex = appointments.findIndex((a) => a.id === id);
-      console.log('index: ', appointmentFoundIndex);
-      const newAppointments = [...appointments].splice(appointmentFoundIndex, 1, appointment);
-      console.log(newAppointments);
+      const appointmentFoundIndex = appointments.findIndex((a) => a.id == id);
+      const newAppointments = [...appointments]
+      newAppointments[appointmentFoundIndex] = appointment
+
       setAppointments(newAppointments);
     }
     
@@ -36,7 +50,6 @@ const App = () => {
 
   // TOOD: Eliminar la cita
   const handleRemoveAppointment = (appointment) => {
-    console.log(appointment.id);
 
     const {id} = appointment;
 
@@ -47,31 +60,29 @@ const App = () => {
 
   // TODO: Editar la cita
   const handleEditAppointment = (appointment) => {
-    console.log(appointment);
     setCurrentAppointment(appointment);
   }
 
   return (
     <>
+      <AppointmentsHeader title='Citas Medicas para Mascotas'/>
+      
+      <main className='container m-auto flex gap-12 py-5'>
 
-    <AppointmentsHeader title='Citas Medicas para Mascotas'/>
-    
-    <main className='container m-auto flex gap-12 py-5'>
+        <AppointmentsForm
+          onSaveAppointment={handleSaveAppointment}
+          appointment = {currentAppointment}
+        />
 
-      <AppointmentsForm
-        onSaveAppointment={handleSaveAppointment}
-        appointment = {currentAppointment}
-      />
+        {/* <pre>{JSON.stringify(appointments, null, 2)}</pre> */}
 
-      {/* <pre>{JSON.stringify(appointments, null, 2)}</pre> */}
-
-      <AppointmentsList
-      appointments = {appointments}
-      onRemoveAppointment = {handleRemoveAppointment}
-      onEditAppointment = {handleEditAppointment}
-      />
-
-    </main>
+        <AppointmentsList
+        appointments = {appointments}
+        onConfirmAppointment = {handleConfirmAppointment}
+        onRemoveAppointment = {handleRemoveAppointment}
+        onEditAppointment = {handleEditAppointment}
+        />
+      </main>
     </>
   )
 }

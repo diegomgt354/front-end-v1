@@ -11,22 +11,24 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
         appointmentDate: '',
         appointmentTime: '',
         sysmptoms: '',
+        confirmed: false
     }
 
     const [form, setForm] = useState(INITIAL_FORM_STATE);
 
     // nos ayuda a controlar el ciclo de vida
     useEffect(() => {
-        if(appointment?.id) {
+        if(appointment.id) {
             setForm(appointment);
+            // appointment.id = null;
         }
     }, [appointment]);
 // }, [appointment,setForm]);
 
+    // manejo de evento para el envio del formulario
     const handleSubmit = (event) => {
         event.preventDefault(); // para que no se actualize la pagina
-        
-        if(appointment?.id){
+        if(appointment.id){
             // logica para editar una cita
             onSaveAppointment(form, false);
         } else {
@@ -39,22 +41,19 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
             onSaveAppointment(newAppointment, true);
         }
 
-        
         setForm(INITIAL_FORM_STATE);
+        appointment.id = null;
     }
 
+    // manejo de los campos en el formulario
     const handleChange = (event) => {
         const {name, value} = event.target;
         setForm({...form, [name]: value});
-
-
     }
 
     return (
         <section className='w-96 p-4 border rounded-md'>
-            <h2 className='text-2x1 text-center mb-4'>Nuevo paciente</h2>
-
-            {/* <pre>{JSON.stringify(form, null, 2)}</pre> */}
+            <h2 className='text-4x1 text-center mb-4'>Nuevo paciente</h2>
 
             <form className='w-full flex flex-col gap-5' onSubmit={handleSubmit}>
 
@@ -104,14 +103,6 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
                         value={form.sysmptoms}
                         handleChangeAppointment={handleChange}
                     />
-                    {/* <textarea
-                        name='sysmptoms'
-                        placeholder='Sintomas'
-                        className='border p-3 shadow-md rounded-md w-full'
-                        rows='5'
-                        value={form.sysmptoms}
-                        // onChange={(event) => setForm({...form, sysmptoms: event.target.value})}
-                        onChange={handleChange}></textarea> */}
 
                     <input type="submit" value="Guardar cita" 
                     className='p-3 bg-green-600 text-white rounded-md cursor-pointer hover:bg-green-700 duration-300'/>
@@ -119,7 +110,7 @@ const AppointmentsForm = ({ onSaveAppointment, appointment })=> {
 
             </form>
 
-            <h1 className="text-2xl font-bold text-center mt-10">JSON</h1>
+            <h1 className="text-2xl text-center mt-10">JSON</h1>
             <div className='text-left w-full bg-blue-100 border my-3 p-3 border-blue-500 rounded-md'>
                 <pre className="w-full overflow-auto whitespace-pre-wrap">{JSON.stringify(form, null, 2)}</pre>
             </div>

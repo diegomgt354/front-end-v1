@@ -1,7 +1,7 @@
 import React from 'react'
 import AppointmentItem from './AppointmentItem';
 
-const AppointmentsList = ({ appointments, onRemoveAppointment, onEditAppointment }) => {
+const AppointmentsList = ({ appointments, onConfirmAppointment, onRemoveAppointment, onEditAppointment }) => {
 
     {
         if(appointments.length === 0){
@@ -15,7 +15,7 @@ const AppointmentsList = ({ appointments, onRemoveAppointment, onEditAppointment
     return (
         <>
 
-            <section className='p-4 bg-white rounded-lg w-[400px]'>
+            <section className='bg-white rounded-lg w-[400px]'>
                 <h2 className='text-2xl mb-4 text-center'>Citas</h2>
 
                 {
@@ -25,6 +25,7 @@ const AppointmentsList = ({ appointments, onRemoveAppointment, onEditAppointment
                             <AppointmentItem
                                 key={a.id}
                                 appointment = {a}
+                                onConfirmAppointment = {onConfirmAppointment}
                                 onRemoveAppointment = {onRemoveAppointment}
                                 onEditAppointment = {onEditAppointment}
                             />
@@ -35,7 +36,13 @@ const AppointmentsList = ({ appointments, onRemoveAppointment, onEditAppointment
                 }
             </section>
 
-            <pre>{JSON.stringify(appointments, null, 2)}</pre>
+            <section>
+                <h1 className="text-2xl text-center">JSON</h1>
+                <div className='text-left w-full bg-blue-100 border my-3 p-3 border-blue-500 rounded-md'>
+                    <pre className="w-full overflow-auto whitespace-pre-wrap">{JSON.stringify(appointments, null, 2)}</pre>
+                </div>
+            </section>
+            
         </>
     )
 }
