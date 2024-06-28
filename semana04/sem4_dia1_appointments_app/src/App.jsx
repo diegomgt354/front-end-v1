@@ -74,17 +74,11 @@ const App = () => {
       
       <main className='container m-auto flex flex-wrap gap-12 py-5'>
 
-        {/* <div> */}
-
           <AppointmentsForm
             onSaveAppointment={handleSaveAppointment}
             appointment = {currentAppointment}
           />
 
-        {/* </div> */}
-
-        {/* <div className='flex gap-12 border border-cyan-500 rounded-md p-3'> */}
-  
           <AppointmentsList
             appointments = {appointments}
             onConfirmAppointment = {handleConfirmAppointment}
@@ -96,8 +90,6 @@ const App = () => {
             appTitle = 'JSON Citas'
             appointments = {appointments} 
           />
-
-        {/* </div> */}
 
       </main>
     </>

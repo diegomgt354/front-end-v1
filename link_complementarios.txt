@@ -32,3 +32,11 @@ https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snipp
 
 https://www.netlify.com/
 https://app.netlify.com/drop
+
+https://flowbite.com/
+https://reactrouter.com/en/main
+https://rickandmortyapi.com/
+
+https://mockapi.io/projects
+
+rafce
