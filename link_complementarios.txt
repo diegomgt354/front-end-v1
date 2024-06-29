@@ -35,8 +35,21 @@ https://app.netlify.com/drop
 
 https://flowbite.com/
 https://reactrouter.com/en/main
+https://reactrouter.com/en/main/start/tutorial
 https://rickandmortyapi.com/
 
 https://mockapi.io/projects
+
+
+https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl
+
+https://redux-toolkit.js.org/
+https://dummyjson.com/docs
+https://dummyjson.com/products
+https://react-icons.github.io/react-icons/
+https://tabler.io/icons
+https://addons.mozilla.org/en-US/firefox/addon/react-devtools/
+
+
 
 rafce
