@@ -1,12 +1,23 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const LayoutBase = () => {
     return (
-        <div>
-            <h1>Header</h1>
-            <Outlet />
-        </div>
+        <>
+            <header className='py-4 px-6 text-white'>
+                <div className="container mx-auto flex justify-between">
+                    <h1 className="font-bold">Invoice App</h1>
+                    <nav className="flex gap-4">
+                        <Link to="/" className="hover:font-bold">Login</Link>
+                        <Link to="/invoices" className="hover:font-bold">Invoices</Link>
+                    </nav>
+                </div>
+            </header>
+            <main className="my-6">
+                <div className="container mx-auto">
+                    <Outlet />
+                </div>
+            </main>
+        </>
     )
 }
 

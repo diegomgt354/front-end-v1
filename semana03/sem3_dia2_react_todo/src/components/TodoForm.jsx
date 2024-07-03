@@ -27,12 +27,12 @@ const TodoForm = ({ onHandleSubmit }) => {
     
     return (
         <form onSubmit={ handleSubmit }>
-        <input className="w-full border my-3 p-3 border-yellow-500 rounded-md"
-            type="text"
-            placeholder="Que deseas hacer hoy?"
-            require = "true"
-            onChange={handleChange} 
-            value={input}/>
+            <input className="w-full border my-3 p-3 border-yellow-500 rounded-md"
+                type="text"
+                placeholder="Que deseas hacer hoy?"
+                require = "true"
+                onChange={handleChange} 
+                value={input}/>
         </form>
     )
 }
