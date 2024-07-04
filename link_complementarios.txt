@@ -52,6 +52,16 @@ https://addons.mozilla.org/en-US/firefox/addon/react-devtools/
 
 https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
+https://www.react-hook-form.com/
+https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html
+https://www.npmjs.com/package/react-toastify
+https://sweetalert2.github.io/#usage
+
+https://nextjs.org/
+https://authjs.dev/
+https://vercel.com/home
+
+
 
 
 rafce

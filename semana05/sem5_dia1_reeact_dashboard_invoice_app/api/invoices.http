@@ -1,61 +1,61 @@
 
-# Listado de invoices
-# GET https://668348414102471fa4c9a487.mockapi.io/api/v1/apiDiego
+### Listado de invoices
+GET https://668348414102471fa4c9a487.mockapi.io/api/v1/apiDiego
 
 
-# obteniendo el invoice por id 
+### obteniendo el invoice por id 
 
-# GET https://668348414102471fa4c9a487.mockapi.io/api/v1/apiDiego/577e444e-b1a8-4cd9-9adf-99b3db8fb837
+GET https://668348414102471fa4c9a487.mockapi.io/api/v1/apiDiego/577e444e-b1a8-4cd9-9adf-99b3db8fb837
 
-# crear un nuevo invoice
+### crear un nuevo invoice
 
-POST https://668348414102471fa4c9a487.mockapi.io/api/v1/apiDiego/
+POST https://668348414102471fa4c9a487.mockapi.io/api/v1/apiDiego
 
-Content-Type: application/json
+Content-Type : application/json
 {
-      "code": "11111111",
-      "status": "paid",
-      "bill": {
-        "from": {
-          "streetAddress": "19 Union Terrace",
-          "city": "London",
-          "postCode": "E13EZ",
-          "country": "United Kingdom"
-        },
-        "to": {
-          "client": {
-            "name": "Alex Grim",
-            "email": "alexgrim@mail.com"
-          },
-          "streetAddress": "84 Church Way",
-          "city": "Bradford",
-          "postCode": "BD19PB",
-          "country": "United Kingdom"
-        }
+  "code": "1e11d1",
+  "status": "paid",
+  "bill": {
+    "from": {
+      "streetAddress": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E13EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "client": {
+        "name": "Alex Grim",
+        "email": "alexgrim@mail.com"
       },
-      "invoice": {
-        "date": "21 Aug 2021",
-        "paymentTerms": "Next 30 Days",
-        "project": {
-          "description": "Graphic Design"
-        },
-        "grandTotal": 556.00,
-        "currency": {
-          "symbol": "$"
-        },
-        "items": [
-          {
-            "name": "Banner Design",
-            "qty": 1,
-            "price": 156.00,
-            "total": 156.00
-          },
-          {
-            "name": "Email Design",
-            "qty": 2,
-            "price": 200.00,
-            "total": 400.00
-          }
-        ]
-      }
+      "streetAddress": "84 Church Way",
+      "city": "Bradford",
+      "postCode": "BD19PB",
+      "country": "United Kingdom"
     }
+  },
+  "invoice": {
+    "date": "21 Aug 2021",
+    "paymentTerms": "Next 30 Days",
+    "project": {
+      "description": "Graphic Design"
+    },
+    "grandTotal": 556.00,
+    "currency": {
+      "symbol": "$"
+    },
+    "items": [
+      {
+        "name": "Banner Design",
+        "qty": 1,
+        "price": 156.00,
+        "total": 156.00
+      },
+      {
+        "name": "Email Design",
+        "qty": 2,
+        "price": 200.00,
+        "total": 400.00
+      }
+    ]
+  }
+}

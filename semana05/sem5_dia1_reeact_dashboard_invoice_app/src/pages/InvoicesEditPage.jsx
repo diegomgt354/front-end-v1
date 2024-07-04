@@ -159,7 +159,7 @@ const InvoicesEditPage = () => {
             name="paymentTerms"
             options={paymentTermsOptions}
             onChange={handleChange}
-            value={form.paymentTermsOptions}
+            value={form.paymentTerms}
           />
         </div>
 
